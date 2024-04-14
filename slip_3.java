@@ -57,3 +57,41 @@ rows
  </table>
 </body>
 </html>
+
+ 2.Write a Java program to create LinkedList of String objects and perform the following:
+ i. Add element at the end of the list 
+ ii. Delete first element of the list 
+ iii. Display the contents of list in reverse order
+
+
+ import java.util.*;
+import java.io.*;
+public class Slip3b {
+
+	public static void main(String[] args) {
+		
+		LinkedList<String> linkedlist=new LinkedList<>();
+		linkedlist.add("Apple");
+		linkedlist.add("Banana");
+		linkedlist.add("Grapes");
+		
+		System.out.println("LinkedList after adding elements : ");
+		System.out.println(linkedlist);
+		
+		if(!linkedlist.isEmpty()) {
+			linkedlist.removeFirst();
+			System.out.println("LinkedList after removing first element : ");
+			System.out.println(linkedlist);
+		}else {
+			System.out.println("LinkedList is Empty,so Cannot remove element!");
+		}
+		
+		System.out.println("\n Linked List in Reverse order :");
+		ListIterator<String> iterator = linkedlist.listIterator(linkedlist.size());
+		while(iterator.hasPrevious()) {
+			System.out.println("\n"+iterator.previous());
+		}
+	}
+
+}
+
